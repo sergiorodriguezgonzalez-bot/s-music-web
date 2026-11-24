@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--idioma-->
+
+<head>
+    <!-- Head:información de la página,enlaces a CSS y fuentes. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S-Music - Descubre música nueva</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- CSS: conecta este HTML -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header: cabecera de la web con el logo y el menú de navegación. -->
+    <header class="site-header">
+
+        <!-- Logo: también es un enlace que lleva al inicio de la página #hero. -->
+        <a class="logo" href="#hero">
+            <span class="material-symbols-outlined" aria-hidden="true">headphones</span>
+            S-Music
+        </a>
+
+        <!-- Nav: contiene los enlaces para saltar a las diferentes secciones. -->
+        <!-- href debe coincidir con el id de la sección a la que queremos ir. -->
+        <nav class="main-nav" aria-label="Navegación principal">
+            <a href="#hero"><span class="material-symbols-outlined" aria-hidden="true">home</span>Inicio</a>
+            <a href="#discover"><span class="material-symbols-outlined" aria-hidden="true">explore</span>Descubre</a>
+            <a href="#how-to"><span class="material-symbols-outlined" aria-hidden="true">queue_music</span>Cómo</a>
+            <a href="#artists"><span class="material-symbols-outlined" aria-hidden="true">groups</span>Artistas</a>
+        </nav>
+    </header>
+
+    <!-- Main: contiene el contenido principal de la página. -->
+    <main>
+
+        <!-- Section 1 - Hero: portada principal de la web. -->
+        <section id="hero" class="screen hero">
+            <!-- Article: agrupa el título, el texto y el botón de la portada. -->
+            <article class="hero-content">
+                <h1>No te dejes llevar solo por el algoritmo</h1>
+                <p>Tu música favorita puede estar fuera de tus recomendaciones. Sal de la playlist de siempre y descubre
+                    sonidos que no sabías que te molaban.</p>
+
+                <!-- Button: enlace con apariencia de botón que lleva a la sección Descubre. -->
+                <a class="button" href="#discover">
+                    <span class="material-symbols-outlined" aria-hidden="true">play_circle</span>
+                    Dale al play
+                </a>
+            </article>
+        </section>
+
+        <!-- Section 2 - Discover: presenta tres formas de descubrir música. -->
+        <section id="discover" class="screen discover">
+            <h2>Escucha más allá de lo de siempre</h2>
+
+            <!-- Div: contenedor que agrupa las tres tarjetas para organizarlas con Flexbox. -->
+            <div class="cards">
+
+                <!-- Article: cada tarjeta contiene un icono, un título y una descripción. -->
+                <article class="card">
+                    <span class="material-symbols-outlined card-icon" aria-hidden="true">library_music</span>
+                    <h3>Géneros nuevos</h3>
+                    <p>Prueba un estilo que nunca escuchas. Del flamenco-pop al indie, siempre hay algo que engancha.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <span class="material-symbols-outlined card-icon" aria-hidden="true">festival</span>
+                    <h3>Música en directo</h3>
+                    <p>Los conciertos pequeños de tu ciudad son la mejor forma de descubrir artistas antes de que sean
+                        famosos.</p>
+                </article>
+
+                <article class="card">
+                    <span class="material-symbols-outlined card-icon" aria-hidden="true">album</span>
+                    <h3>Discos enteros</h3>
+                    <p>Escucha un álbum de principio a fin, sin saltar canciones. Las joyas suelen estar escondidas.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 3 - How-to: explica los pasos para descubrir música. -->
+        <section id="how-to" class="screen-how-to">
+            <h2>Cómo descubrir música</h2>
+
+            <!-- Div: agrupa la lista de pasos y el aside de consejos. -->
+            <div class="how-to-layout">
+
+                <!-- Ol: lista ordenada porque los pasos siguen una secuencia. -->
+                <!-- Li: representa cada uno de los pasos de la lista. -->
+                <ol class="steps">
+                    <li class="step">
+                        <span class="material-symbols-outlined card-icon" aria-hidden="true">queue_music</span>
+                        <h3>1. Sal de tu playlist</h3>
+                        <p>Apaga el modo aleatorio y busca algo que no te hayan recomendado.</p>
+                    </li>
+
+                    <li class="step">
+                        <span class="material-symbols-outlined card-icon" aria-hidden="true">headphones</span>
+                        <h3>2. Dale una oportunidad</h3>
+                        <p>Escucha al menos tres canciones antes de decidir si te gusta.</p>
+                    </li>
+
+                    <li class="step">
+                        <span class="material-symbols-outlined card-icon" aria-hidden="true">share</span>
+                        <h3>3. Compártelo</h3>
+                        <p>Pásale tu hallazgo a un amigo. La música mola más si se comparte.</p>
+                    </li>
+                </ol>
+
+                <!-- Aside: información complementaria que acompaña a los pasos. -->
+                <aside class="tips">
+                    <h3>Formas de descubrir música</h3>
+
+                    <!-- Table: organiza la información en filas y columnas. -->
+                    <table>
+                        <!-- Thead: contiene la fila de encabezados de la tabla. -->
+                        <thead>
+                            <tr>
+                                <th>Método</th>
+                                <th>Qué hacer</th>
+                            </tr>
+                        </thead>
+
+                        <!-- Tbody: contiene las filas con los datos de la tabla. -->
+                        <tbody>
+                            <tr>
+                                <td>Nuevos géneros</td>
+                                <td>Escuchar estilos diferentes.</td>
+                            </tr>
+                            <tr>
+                                <td>Conciertos</td>
+                                <td>Descubrir artistas en directo.</td>
+                            </tr>
+                            <tr>
+                                <td>Álbumes</td>
+                                <td>Escuchar discos completos.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Section 4 - Artists: galería de doce artistas con imágenes y descripciones. -->
+        <section id="artists" class="gallery-section">
+            <h2>Artistas que merece la pena escuchar</h2>
+
+            <!-- Div: agrupa todas las tarjetas de la galería para distribuirlas con Flexbox. -->
+            <div class="gallery">
+
+                <!-- Figure: agrupa una imagen y su descripción. -->
+                <!-- Img: muestra la imagen; src indica su ruta y alt describe la imagen. -->
+                <!-- Figcaption: contiene el título y el texto que acompañan a la imagen. -->
+                <figure>
+                    <img src="img/laan.jpg" alt="Lana del rey Lies">
+                    <figcaption>
+                        <h3>Lana Del Rey Ft Zach Bryan</h3>
+                        <p>Una novedad para escuchar relajado y dejarte llevar.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/sienna.jpg" alt="Portada álbum sienna">
+                    <figcaption>
+                        <h3>Sienna Spiro</h3>
+                        <p>Promesa británica que ha dominado las listas con su nuevo álbum cargado de pop, soul y jazz.
+                        </p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/nina.jpg" alt="Portada nina álbum">
+                    <figcaption>
+                        <h3>Nina Simone</h3>
+                        <p>Una artista que ha influencia a cientos de artistas actuales y que nos presenta su obra
+                            maestra Pastel Blues.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/caro.jpg" alt="Carolina Durante Portada">
+                    <figcaption>
+                        <h3>Carolina Durante</h3>
+                        <p>Grupo Español que ofrece propuestas interesantes como su último álbum "Elige tu propia
+                            aventura".</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/ruso.jpg" alt="Daysi Portada Rusowsky">
+                    <figcaption>
+                        <h3>Rusowsky</h3>
+                        <p>Nueva promesa española que con su bedroom pop ha conseguido alcanzar el top 1 de Spotify.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/vedo.jpg" alt="Quevedo portada">
+                    <figcaption>
+                        <h3>Quevedo</h3>
+                        <p>Músico canario que con su último trabajo, un tributo a las islas ha conseguido consolidarse
+                            en la escena española.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/raye.jpg" alt="Raye single portada">
+                    <figcaption>
+                        <h3>Raye</h3>
+                        <p>Cantautora que no deja de sorpreder y crear musica más haya de la melodia destacando su
+                            single Genesis.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/pop.jpg" alt="Icona pop portada I love it">
+                    <figcaption>
+                        <h3>Icona Pop Ft Charli XcX</h3>
+                        <p>Duo que consiguió crear una canción "I Love It" que ha pasado a ser el himno de una
+                            generación.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/mon.jpg" alt="La trenza portada">
+                    <figcaption>
+                        <h3>Mon Laferte</h3>
+                        <p>Cantante y compositora chilena que fusiona el bolero, el rock y el pop latino a través de una
+                            voz potente y letras desgarradoras.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/verano.jpg" alt="Ya no hay verano portada">
+                    <figcaption>
+                        <h3>Carolina Durante:Versionando Depresion Sonora</h3>
+                        <p>Prueba de que no siempre las canciones versionadas son peores que la original.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/aurora.jpg" alt="All my portada">
+                    <figcaption>
+                        <h3>Aurora</h3>
+                        <p>Cantante noruega que con sus videoclips y melodias te transportara a otra realidad.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/son.jpg" alt="Son juana portada">
+                    <figcaption>
+                        <h3>Juana Molina</h3>
+                        <p>Algo más experimental con la propuesta de la cantante y actriz argentina y su disco Son.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer: pie de página con información de contacto, enlaces y copyright. -->
+    <footer class="site-footer">
+    
+        <!-- Address: etiqueta agrupar los datos de contacto. -->
+        <div class="footer-contact">
+            <h2>Contacto</h2>
+            <address>
+                <p><span class="material-symbols-outlined" aria-hidden="true">mail</span>S-music@gmail.com</p>
+                <p><span class="material-symbols-outlined" aria-hidden="true">campaign</span>Cuéntanos qué estás escuchando
+                </p>
+            </address>
+        </div>
+    
+        <!-- Nav: contiene enlaces para volver a las secciones de la página. -->
+        <nav aria-label="Enlaces del pie">
+            <h2>Enlaces</h2>
+            <a href="#discover">Descubre</a>
+            <a href="#how-to">Cómo</a>
+            <a href="#artists">Artistas</a>
+        </nav>
+    
+        <!-- Copyright: muestra el aviso de derechos y el año. -->
+        <p class="copyright">© 2026 S-Music. ;)</p>
+    </footer>
+    </body>
+    
+    </html>

@@ -1,0 +1,481 @@
+/* Reset: quita márgenes y espacios que pone el navegador.
+   box-sizing hace que el padding y el borde cuenten dentro del tamaño del elemento. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Color variables: cambiar los colores desde un solo sitio. */
+:root {
+    --forest: #aee141;
+    --leaf: #1cb3a6;
+    --mint: #5c9f56;
+    --sky: #48cae4;
+    --deep-blue: #40a1c4;
+    --white: #ffffff;
+    --pink: #d29ecd;
+    --orange: #e25f1e;
+}
+
+/* HTML: tamaño base del texto y desplazamiento smooth al pulsar los enlaces del menú. */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+/* Body: fuente, separación entre líneas, color del texto y fondo general de la web. */
+body {
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--forest);
+    background-color: var(--mint);
+}
+
+/* Headings: cambia la fuente de los títulos para diferenciarlos del texto normal. */
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.2;
+}
+
+/* H2: tamaño, espacio inferior y alineación centrada de los títulos de sección. */
+h2 {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Icons: alinea los iconos con el texto a la misma altura. */
+.material-symbols-outlined {
+    vertical-align: middle;
+}
+
+/* ---------- Header: cabecera y menú en escritorio ---------- */
+/* Header: alinea el logo y el menú en una fila y los separa en escritorio. */
+.site-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem 4rem;
+    background-color: var(--forest);
+    color: var(--white);
+}
+
+/* Logo: cambia la fuente, el tamaño y el color del nombre de la web. */
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Main navigation: coloca los enlaces en una fila y ocupa solo el ancho necesario. */
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 0.25rem;
+}
+
+/* Navigation links: espacio interior, color, elimina el subrayado y prepara el borde. */
+.main-nav a {
+    padding: 0.6rem 1rem;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Hover and focus: cambia el fondo y el borde al pasar el ratón o seleccionar un enlace. */
+.main-nav a:hover,
+.main-nav a:focus {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-bottom-color: var(--sky);
+}
+
+/* ---------- Sections: secciones principales de la web ---------- */
+/* Screen: cada sección ocupa al menos toda la altura de la pantalla.
+   Flexbox centra el contenido verticalmente y padding crea espacio interior. */
+.screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem;
+}
+
+/* Hero: portada principal con texto centrado y un fondo degradado. */
+.hero {
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    background: linear-gradient(180deg, rgba(27, 67, 50, 0.3), rgba(27, 67, 50, 0.8)),
+        linear-gradient(135deg, var(--leaf), var(--deep-blue));
+}
+
+/* Hero content: limita el ancho del contenido de la portada. */
+.hero-content {
+    max-width: 40rem;
+}
+
+/* Hero title: tamaño y espacio inferior del título principal. */
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* Hero paragraph: deja espacio debajo del texto de la portada. */
+.hero p {
+    margin-bottom: 2rem;
+}
+
+/* Button: crea un botón con espacio interior, borde blanco y esquinas redondeadas. */
+.button {
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    border: 2px solid var(--white);
+    border-radius: 2rem;
+    color: var(--white);
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Button hover: rellena el botón de blanco y cambia el color del texto. */
+.button:hover,
+.button:focus {
+    background-color: var(--white);
+    color: var(--deep-blue);
+}
+
+/* ---------- Cards and steps: tarjetas y pasos con Flexbox ---------- */
+/* Cards and steps: comparten separación y eliminan los estilos de lista; los pasos se ajustan en su propia regla. */
+.cards,
+.steps {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Card and step: espacio interior, fondo blanco, borde inferior y esquinas redondeadas.
+   flex: 1 hace que los elementos compartan el espacio disponible. */
+.card,
+.step {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    background-color: var(--white);
+    border-bottom: 5px solid var(--sky);
+    border-radius: 0.5rem;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Card and step hover: levanta un poco la tarjeta y cambia el color del borde. */
+.card:hover,
+.step:hover {
+    transform: translateY(-0.5rem);
+    border-color: var(--leaf);
+}
+
+/* Card icon: aumenta el tamaño y cambia el color de los iconos de las tarjetas. */
+.card-icon {
+    font-size: 3rem;
+    color: var(--orange);
+}
+
+/* Card and step headings: añade espacio alrededor de los títulos de cada elemento. */
+.card h3,
+.step h3 {
+    margin: 0.5rem 0;
+}
+
+/* ---------- How-to section: sección que explica los pasos ---------- */
+/* How-to: pone el fondo de la sección de pasos en blanco. */
+.how-to {
+    background-color: var(--white);
+}
+
+/* How-to steps: cambia el fondo de las tarjetas de pasos. */
+.how-to .step {
+    background-color: var(--mint);
+}
+
+/* How-to layout: coloca los pasos y el aside en dos columnas en escritorio. */
+.how-to-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+/* Steps: muestra los pasos en columna y reserva más espacio que para el aside. */
+.steps {
+    flex-direction: column;
+    flex: 3;
+}
+
+/* ---------- Tips table: tabla de consejos ---------- */
+/* Tips table: ocupa el ancho disponible, pone fondo blanco y añade un borde redondeado.
+   border-collapse junta los bordes de las celdas. */
+.tips table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--deep-blue);
+    border: 1px solid var(--deep-blue);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table cells: añade espacio interior, bordes y alinea el texto a la izquierda. */
+.tips th,
+.tips td {
+    padding: 0.8rem;
+    border: 1px solid var(--white);
+    text-align: left;
+}
+
+/* Table headings: cambia el fondo de las celdas de encabezado de la tabla. */
+.tips th {
+    background-color: var(--pink);
+}
+
+/* ---------- Gallery: galería de imágenes ---------- */
+/* Gallery section: crea espacio amplio alrededor de la galería en escritorio. */
+.gallery-section {
+    min-height: 100vh;
+    padding: 5rem 4rem;
+}
+
+/* Gallery: coloca las imágenes en fila y permite que pasen a otra línea si no caben. */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Figure: cada imagen y su texto forman una tarjeta.
+   overflow oculta las partes de la imagen que sobresalen al hacer zoom. */
+.gallery figure {
+    width: calc((100% - 2rem) / 3);
+    overflow: hidden;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    transition: transform 0.3s;
+}
+
+/* Gallery images: ocupa todo el ancho, fija la altura y recorta sin deformar la imagen. */
+.gallery img {
+    display: block;
+    width: 100%;
+    height: 14rem;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+/* Figcaption: espacio interior y fondo blanco para el texto debajo de la imagen. */
+.gallery figcaption {
+    position: relative;
+    padding: 1rem;
+    background-color: var(--white);
+}
+
+/* Gallery title: espacio debajo del título y color azul. */
+.gallery figcaption h3 {
+    margin-bottom: 0.25rem;
+    color: var(--deep-blue);
+}
+
+/* Gallery paragraph: reduce el tamaño del texto descriptivo de las imágenes. */
+.gallery figcaption p {
+    font-size: 0.9rem;
+}
+
+/* Gallery hover: levanta un poco la tarjeta al pasar el ratón. */
+.gallery figure:hover {
+    transform: translateY(-0.4rem);
+}
+
+/* Image hover: amplía la imagen al pasar el ratón. */
+.gallery figure:hover img {
+    transform: scale(1.1);
+}
+
+/* ---------- Footer: pie de página ---------- */
+/* Footer: distribuye sus elementos en escritorio, con espacio interior y fondo verde. */
+.site-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 3rem 4rem 2rem;
+    background-color: var(--forest);
+    color: var(--white);
+}
+
+/* Footer headings: reduce el tamaño y alinea los títulos a la izquierda. */
+.site-footer h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+/* Address: quita la cursiva que el navegador aplica por defecto. */
+.site-footer address {
+    font-style: normal;
+}
+
+/* Footer columns: reserva el 30% del ancho para contacto y navegación. */
+.site-footer .footer-contact,
+.site-footer nav {
+    width: 30%;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+}
+
+.site-footer nav {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer links: cambia el color y elimina el subrayado de los enlaces. */
+.site-footer nav a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Footer link hover: cambia el color y subraya el enlace al pasar el ratón. */
+.site-footer nav a:hover {
+    color: var(--sky);
+    text-decoration: underline;
+}
+
+/* ---------- Tablet: ajustes para pantallas de hasta 991px ---------- */
+@media screen and (max-width: 991px) {
+    /* Header: reduce el espacio lateral de la cabecera. */
+    .site-header {
+        padding: 1rem 2rem;
+    }
+
+    /* Headings: reduce los títulos para que encajen mejor en tablet. */
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Hero: reduce el título principal respecto al tamaño de escritorio. */
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    /* Sections: reduce el espacio interior de las secciones y la galería. */
+    .screen,
+    .gallery-section {
+        padding: 4rem 2rem;
+    }
+
+    /* Cards: permite que las tarjetas ocupen más de una fila. */
+    .cards {
+        flex-wrap: wrap;
+    }
+
+    /* Card: fija una base para que quepan dos tarjetas por fila. */
+    .card {
+        flex: 1 1 40%;
+    }
+
+    /* Steps: coloca los pasos en fila en el ancho de tablet. */
+    .steps {
+        flex-direction: row;
+    }
+
+    /* How-to: apila los pasos y el aside para darles espacio suficiente. */
+    .how-to-layout {
+        flex-direction: column;
+    }
+
+    /* Gallery: muestra dos imágenes por fila. */
+    .gallery figure {
+        width: calc((100% - 1rem) / 2);
+    }
+
+    /* Footer: reduce el espacio interior y deja que las columnas usen su contenido. */
+    .site-footer {
+        padding: 2rem;
+    }
+
+    .site-footer .footer-contact,
+    .site-footer nav {
+        width: auto;
+    }
+}
+
+/* ---------- Móvil: ajustes para pantallas de hasta 767px ---------- */
+@media screen and (max-width: 767px) {
+    /* Header: apila el logo y el menú, centrados en una columna. */
+    .site-header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    /* Navigation: apila los enlaces y permite que ocupen todo el ancho. */
+    .main-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Headings: ajusta el tamaño de los títulos al espacio móvil. */
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Hero: reduce el título principal para evitar desbordamientos. */
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Sections: reduce los márgenes interiores en pantallas estrechas. */
+    .screen,
+    .gallery-section {
+        padding: 3rem 1rem;
+    }
+
+    /* Cards and steps: apila las tarjetas y los pasos en una sola columna. */
+    .cards,
+    .steps {
+        flex-direction: column;
+    }
+
+    /* Card: ocupa el ancho disponible en la columna móvil. */
+    .card {
+        flex: 1;
+    }
+
+    /* How-to: apila el bloque de pasos y el aside. */
+    .how-to-layout {
+        flex-direction: column;
+    }
+
+    /* Gallery: muestra una imagen por fila y ocupa todo el ancho disponible. */
+    .gallery figure {
+        width: 100%;
+    }
+
+    /* Footer: apila las columnas y reduce el espacio interior. */
+    .site-footer {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .site-footer .footer-contact,
+    .site-footer nav {
+        width: 100%;
+    }
+}
+
